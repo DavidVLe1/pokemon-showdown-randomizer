@@ -1,2 +1,12 @@
-<%= @random_poke_indexes %>
-<%= @pokemon_team_data %>
+<!-- <%= @random_poke_indexes %> -->
+<!-- <%= @pokemon_team_data %> -->
+
+<h2>Your Random Pokemon Team:</h2>
+<div class="pokemon_cards">
+  <% @pokemon_team_data.each do |pokemon| %>
+    <div class="pokemon_card">
+      <h3><%= pokemon["species"]["name"].capitalize %></h3>
+      <img src="<%= pokemon['sprites']['front_default'] %>" alt="<%= pokemon['species']['name'] %> Sprite">
+    </div>
+  <% end %>
+</div>
