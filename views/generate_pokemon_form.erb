@@ -6,7 +6,12 @@
   <% @pokemon_team_data.each do |pokemon| %>
     <div class="pokemon_card">
       <h3><%= pokemon["species"]["name"].capitalize %></h3>
-      <img src="<%= pokemon['sprites']['front_default'] %>" alt="<%= pokemon['species']['name'] %> Sprite">
+      <% animated_src = pokemon['sprites']['versions']['generation-v']['black-white']['animated']['front_default'] %>
+      <% if !animated_src.nil?  %>
+        <img src="<%= animated_src %>" alt="<%= pokemon['species']['name'] %> Sprite">
+      <% else %>
+        <img src="<%= pokemon['sprites']['front_default'] %>" alt="<%= pokemon['species']['name'] %> Sprite">
+      <% end %>
     </div>
   <% end %>
 </div>
