@@ -1,18 +1,5 @@
-# sinatra-template
+# pokemon-showdown-randomizer
 
-Use this repository to create new Sinatra apps. 
-
-Optionally, to use `ActiveRecord` for database operations, add to the `app.rb`:
-
-```ruby
-require "sinatra/activerecord"
-```
-
-And in the `config/environment.rb` file add this code block:
-
-```ruby
-configure do
-  # setup a database connection
-  set(:database, { adapter: "sqlite3", database: "db/development.sqlite3" })
-end
-```
+My web application builds a randomized team of 6 pokemon using the PokeApi for users to use for the Pokemon showdown website which players build their teams and battles other players to test out strategies.
+### Technical details
+The application calls the PokeAPi API, searching for pokemon information based on their pokedex or index number which then makes use of the sprite images as well as the name of the species to display the pokemon that users see on screen. The team is randomized each time when the window is refreshed.
